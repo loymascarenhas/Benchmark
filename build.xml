@@ -1,0 +1,42 @@
+<project>
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+
+	<target name="cpu">
+        <java fork="true" failonerror="yes" classname="BenchmarkCPU">
+		<classpath path="build/classes" />
+      	</java>
+    </target>
+	
+    <target name="disk">
+        <java fork="true" failonerror="yes" classname="BenchmarkDisk">
+		<classpath path="build/classes" />
+      	</java>
+    </target>
+    
+    <target name="tcpserver">
+        <java fork="true" failonerror="yes" classname="BenchmarkNetworkServer">
+		<classpath path="build/classes" />
+      	</java>
+    </target>
+	
+	<target name="udpserver">
+        <java fork="true" failonerror="yes" classname="BenchmarkNetworkServerUDP">
+		<classpath path="build/classes" />
+      	</java>
+    </target>
+	
+	<target name="tcpclient">
+        <java fork="true" failonerror="yes" classname="BenchmarkNetworkClient">
+		<classpath path="build/classes" />
+      	</java>
+    </target>
+	
+	<target name="udpclient">
+        <java fork="true" failonerror="yes" classname="BenchmarkNetworkClientUDP">
+		<classpath path="build/classes" />
+      	</java>
+    </target>
+</project>
